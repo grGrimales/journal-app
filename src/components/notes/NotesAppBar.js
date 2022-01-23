@@ -10,6 +10,8 @@ export const NotesAppBar = () => {
   const handleSave = () => {
     dispatch(startSaveNote(active));
   };
+
+  
   const handlePictureClick = () => {
     document.querySelector("#fileSelector").click();
   };

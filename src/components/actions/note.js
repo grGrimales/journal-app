@@ -60,7 +60,9 @@ export const startSaveNote = (note) => {
     delete noteToFirestore.id;
 
     await db.doc(`${uid}/journal/notes/${note.id}`).update(noteToFirestore);
+
     dispatch(refreshNote(note.id, noteToFirestore));
+
     Swal.fire("Saved", note.title, "success");
   };
 };
@@ -75,6 +77,8 @@ export const refreshNote = (id, note) => ({
     },
   },
 });
+
+
 
 export const startUploading = (file) => {
   return async (dispatch, getState) => {
@@ -104,10 +108,9 @@ export const startDeleting = (id) => {
 
     try {
       await db.doc(`${uid}/journal/notes/${id}`).delete();
-      console.log(uid, id);
-      console.log("termino el borrado en la base de datos");
+      Swal.fire("success", 'Note Eliminado', "success");
     } catch (error) {
-      console.log(error.message);
+      Swal.fire("Error", 'Error', "error");
     }
 
     dispatch(deleteNote(id));

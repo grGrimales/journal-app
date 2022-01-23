@@ -4,7 +4,11 @@
   color: white;
   cursor: pointer;
   font-size: 12px;
-  padding: 7px 10px 7px 10px;
+  padding: 12px 38px 7px 10px;
+
+  @media (min-width: 768px) { 
+    padding: 7px 10px 7px 10px;
+ }
 
   transition: color 0.3s ease;
   &:focus {
@@ -30,6 +34,7 @@
 }
 
 .btn-danger {
+  margin-top: 5px;
   background-color: red;
   transition: background-color 0.3s ease;
 

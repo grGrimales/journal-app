@@ -44,7 +44,10 @@
   resize: none;
 }
 
-notes__image img {
+.notes__image{
+  margin-right: 20px;
+}
+.notes__image img {
   box-shadow: 5px 5px $dark-grey;
   height: 150px;
 }
