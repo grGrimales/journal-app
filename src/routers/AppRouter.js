@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Redirect,
@@ -36,9 +36,7 @@ export const AppRouter = () => {
     });
   }, [dispatch, setCheking, setIsLoggedIn]);
 
-  if (cheking) {
-    return <h1>WAIT...</h1>;
-  }
+  
 
   return (
     <Router>
